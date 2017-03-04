@@ -31,8 +31,8 @@ class Main extends Component {
     super(props, context);
 
     this.state = {
-        isLoggedIn: false,
-      open: false,
+      isLoggedIn: false,
+      user: null,
     };
   }
 
@@ -44,12 +44,17 @@ class Main extends Component {
   }
 
   doLogin = () => {
-    this.setState({
-        isLoggedIn: true,
+      console.log('a'+this.refs.login.state.isLoggedIn);
+//    this.setState({
+//        isLoggedIn: true,
       //open: true,
-    });
+//    });
   }
 
+  gotoRegistration = () => {
+      console.log('registrati');
+  }
+  
   render() {
     const standardActions = (
       <FlatButton
@@ -63,7 +68,7 @@ class Main extends Component {
         return (
         <MuiThemeProvider muiTheme={muiTheme}>
           <div style={styles.container}>        
-            <AppBar title="My AppBar" />
+            <AppBar title="Enjoy" />
 
             <Dialog
               open={this.state.open}
@@ -89,12 +94,13 @@ class Main extends Component {
         return (
         <MuiThemeProvider muiTheme={muiTheme}>
           <div style={styles.container}>        
-            <AppBar title="My AppBar" />
-            <Login />
+            <AppBar title="Enjoy" icon="" />
+            <Login login={() => this.doLogin.bind(this)} ref="login" />
+            
             <RaisedButton
-              label="Login"
+              label="Resgistrati"
               secondary={true}
-              onTouchTap={this.doLogin}
+              onTouchTap={this.gotoRegistration}
             />
           </div>
 

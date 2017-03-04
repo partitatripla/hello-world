@@ -10,28 +10,36 @@ import Paper from 'material-ui/Paper';
  */
 class Login extends Component {
   state = {
-    selectedIndex: 0,
+    isLoggedIn: false,
   };
 
   doLogin = () => {
-    alert();  
+    this.state.isLoggedIn = true;
+    console.log(this.state.isLoggedIn);
   }
+  
+
+  
   
   render() {
     return (
         <div>
             <TextField
-              hintText="Hint Text"
+              type="email"
+              hintText="Email"
             /><br />
             <br />
             <TextField
-              hintText="The hint text can be as long as you want, it will wrap."
+              type="password"
+              hintText="Password"
             />
+            <br />
             <RaisedButton
               label="Login"
               secondary={true}
               onTouchTap={this.doLogin}
             />
+            
         </div>
     );
   }
