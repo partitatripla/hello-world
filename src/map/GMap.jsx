@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Map, Marker } from 'google-maps-react'
 
-class MyMap extends Component {
+class GMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,25 +28,26 @@ class MyMap extends Component {
   }
   
   render() {
-      var center = {lat: 46.061933, lng: 12.080554};
+    var center = {lat: 46.061933, lng: 12.080554};
       
-      let google = this.props.google;
+    let google = this.props.google;
   
-        return (
-           <Map
-                google={google}
-                zoom={14}
-                initialCenter={center}
-                ref="googleMap">
-                <Marker
-                onClick={this.onMarkerClick}
-                name={'Your position'}
-                position={{lat: 46.061933, lng: 12.080554}}
-                text={'A'}
-                ></Marker>
-                        </Map>
-        );
-    }
+    return (
+      <Map
+        height={'300px'}
+        google={google}
+        zoom={14}
+        initialCenter={center}
+        ref="googleMap">
+        <Marker
+          onClick={this.onMarkerClick}
+          name={'Your position'}
+          position={{lat: 46.061933, lng: 12.080554}}
+          text={'A'}
+        ></Marker>
+      </Map>
+    );
+  }
 }
 
-export default MyMap;
+export default GMap;
