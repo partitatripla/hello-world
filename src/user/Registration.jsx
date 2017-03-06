@@ -14,10 +14,10 @@ class Registration extends Component {
     return (
       <DocumentTitle title={'Registration'}>
         <div>
-          <TextField type="text" hintText="Nome" />
-          <TextField type="text" hintText="Cognome" />
-          <TextField type="text" hintText="Email" />
-          <TextField type="text" hintText="Telefono" />
+          <TextField type="text" hintText="Nome" /><br/>
+          <TextField type="text" hintText="Cognome" /><br/>
+          <TextField type="text" hintText="Email" /><br/>
+          <TextField type="text" hintText="Telefono" /><br/>
           
           <RaisedButton label="Invia i dati" secondary={false} onTouchTap={this.gotoRegistration} /> 
           <p>

@@ -76,7 +76,7 @@ const params = {v: '3.exp', key: 'YOUR_API_KEY'};
           onClick={this.onClick} />
       </Gmaps>
            
-        <FlatButton label="Login" secondary={true} onTouchTap={this.gotoLogin} />   
+        <FlatButton label="Vai al login" secondary={true} onTouchTap={this.gotoLogin} />   
         </div>
         </DocumentTitle>
     );
