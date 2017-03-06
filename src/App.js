@@ -13,6 +13,7 @@ import AppBar from 'material-ui/AppBar';
 
 import Login from './user/Login';
 import BottomMenu from './BottomMenu';
+import MyMap from './map/map.js';
 
 const styles = {
   container: {
@@ -85,6 +86,9 @@ class Main extends Component {
               secondary={true}
               onTouchTap={this.doLogout}
             />
+            
+            {this.props.children}
+            
             <BottomMenu />
           </div>
 
@@ -95,6 +99,9 @@ class Main extends Component {
         <MuiThemeProvider muiTheme={muiTheme}>
           <div style={styles.container}>        
             <AppBar title="Enjoy" icon="" />
+            
+            {this.props.children}
+            
             <Login login={() => this.doLogin.bind(this)} ref="login" />
             
             <RaisedButton
@@ -102,7 +109,11 @@ class Main extends Component {
               secondary={true}
               onTouchTap={this.gotoRegistration}
             />
-          </div>
+            
+            <MyMap google={window.google}/>
+                    
+                    <BottomMenu />
+              </div>
 
         </MuiThemeProvider>
       );
